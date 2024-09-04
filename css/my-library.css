@@ -1,0 +1,32 @@
+/* start main heading */
+.main-heading {
+    width: calc(fit-content + 20px);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.main-heading h3 {
+    font-size: 40px;
+    color: var(--main-color);
+    margin-bottom: 15px;
+}
+
+.main-heading p {
+    font-size: 20px;
+    color: var(--secondary-color);
+}
+/* end main heading */
+/* start overlay */
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0 , 0 , 0 , 40%);
+    top: 0;
+}
+/* end overlay */

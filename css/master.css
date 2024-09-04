@@ -1,6 +1,7 @@
 :root {
   --main-color: #601cfa;
-  --secondary-color: ;
+  --secondary-color: #0025f7;
+  --main-padding: 100px;
 }
 
 /* start global rules */
@@ -14,6 +15,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   text-transform: capitalize;
+  text-decoration: none;
 }
 
 .container {
@@ -93,7 +95,7 @@ header .container .nav {
 }
 
 header .container .nav > i {
-  color: var(--secondary-color);
+  color: black;
   font-size: 25px;
   display: none;
 }
@@ -123,6 +125,10 @@ header .container .nav ul li a {
 
 header .container .nav ul li a:hover {
   background-color: black;
+}
+
+header .container .nav i:hover + ul {
+  display: block;
 }
 
 @media (max-width: 991px) {
@@ -156,13 +162,7 @@ header .container .nav ul li a:hover {
     display: flex;
     justify-content: space-evenly;
   }
-  header .container .nav ul li a i {
-    
-  }
   header .container .nav i {
-    display: block;
-  }
-  header .container .nav i:hover + ul {
     display: block;
   }
 }
@@ -185,7 +185,7 @@ header .container .nav ul li a:hover {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   height: 300px;
   padding: 10px 15px;
@@ -193,29 +193,106 @@ header .container .nav ul li a:hover {
 }
 
 .landing .content h2 {
-  font-size: 100px;
+  font-size: 90px;
   font-weight: 600;
   width: fit-content;
   color: white;
 }
 
 .landing .content p:last-child {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 400;
   width: fit-content;
   color: white;
 }
 
 @media (max-width: 767px) {
+  .landing .content {
+    transform: translate(-50%, -90%);
+    position: relative;
+  }
   .landing .content h2 {
-    font-size: 40px;
+    font-size: 70px;
     position: absolute;
     bottom: 50px;
   }
   .landing .content p:last-child {
-    font-size: 18px;
+    font-size: 25px;
     position: absolute;
     bottom: 20px;
   }
 }
 /* end landing */
+/* start laptops */
+
+.laptops {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  background-image: url(../imgs/laptops.png);
+  background-size: cover;
+  height: fit-content;
+  position: relative;
+}
+
+.laptops .overlay {
+  background-color: rgba(0, 0, 0, 70%);
+}
+
+.laptops .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.laptops .card {
+  display: flex;
+  align-items: center;
+  background-color: #601cfa;
+  height: 450px;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.laptops .card img {
+  flex: 1;
+  width: 250px;
+  position: relative;
+}
+
+.laptops .card img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: calc(100% - 50px);
+  background-color: var(--secondary-color);
+}
+
+.laptops .card .text {
+  width: 100%;
+  text-align: center;
+  height: 150px;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  position: relative;
+}
+
+.laptops .card .text h4 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.laptops .card .text a {
+  font-size: 20px;
+  color: white;
+}
+/* end laptops */
+
